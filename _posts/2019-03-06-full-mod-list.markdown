@@ -2,11 +2,12 @@
 layout: post
 title:  "Full Mod List"
 date:   2019-03-06
+permalink: /about/mod-list?{{ site.latestRelease }}
 ---
 
 # Foxcraft {{ site.latestRelease }} Full Mod List
 
-Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfortably on the main page. While those mods are at the heart of Foxcraft, there are dozens of additional mods to explore. A comprehensive account of all mods installed for Foxcraft {{ site.latestRelease }} can be found below. 
+Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfortably on the main page. While those mods are at the heart of Foxcraft, there are dozens of additional mods to explore. A comprehensive account of all mods installed for Foxcraft {{ site.latestRelease }} can be found below.
 
 *Click the name of any mod to learn more.*
 
