@@ -1,29 +1,31 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Adventure Awaits
+permalink: /
 ---
 
-# Foxcraft v1.0 for 1.7.10
+# Foxcraft {{ site.modpackVersion }} for {{ site.minecraftVersion }}
 
 ## Quick Start
 
-1. [Download Forge 1.7.10 Recommended (1558)](http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html)
-1. [Download Mods](https://minhaskamal.github.io/DownGit/#/home?url=https:%2F%2Fgithub.com%2Fandrewjmetzger%2Ffoxcraft.mtz.gr%2Ftree%2Fmaster%2Fstatic%2Fmods%2Fclient&fileName=mods&rootDirectory=false)
-1. Download [Optional Custom Resource Pack](#)
-1. Play at `play.foxcraft.mtz.gr`
+1. [Download Forge 1.7.10 Recommended Build (1558)](http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html)
+2. [Download Mods](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/andrewjmetzger/foxcraft.mtz.gr/tree/v1.0/static/mods/client&fileName=mods&rootDirectory=false)
+3. Download [Optional Custom Resource Pack](https://raw.githubusercontent.com/andrewjmetzger/foxcraft.mtz.gr/v1.0/static/resourcepacks/FoxcraftCustom/FoxcraftCustom.zip)
+4. Play at `play.foxcraft.mtz.gr`
 
 ## Introduction
 
-Foxcraft is a custom Forge-based modpack for Minecraft 1.7.10 that features an exciting combination of mods from all corners of Minecraftia. All mods included with love and permission where available, or hugs of forgiveness in all other territories. 
+Foxcraft is a custom Forge-based modpack for Minecraft that features an exciting combination of mods from all corners of Minecraftia. All mods included with love and permission where available, or hugs of forgiveness in all other territories.
 
 ## Included mods
 
 Foxcraft uses mods to enhance gameplay and provide an immersive experience. Here are just a few of the mods installed:
 
+* Ars Magica
+* Galacticraft
 * OreSpawn
 * Tinker's Construct
-* 
+* ... and [dozens of other mods](#) to explore ...
 
 ## Custom Resource Pack
 

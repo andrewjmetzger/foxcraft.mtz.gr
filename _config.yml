@@ -28,3 +28,7 @@ google-analytics:
 
 exclude:
   - vendor
+
+# Site-specific configuration
+modpackVersion: 'v1.0'
+minecraftVersion: '1.7.10'
