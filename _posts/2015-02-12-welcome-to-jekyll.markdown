@@ -1,25 +1,59 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2015-02-12 13:46:40
-categories: jekyll update
+title:  "Full Mod List"
+date:   2019-03-06
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+# Foxcraft {{site.latestRelease}} Full Mod List
 
-Jekyll also offers powerful support for code snippets:
+Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfortably on the main page. While those mods are at the heart of Foxcraft, there are dozens of additional mods to explore. A comprehensive account of all mods installed for Foxcraft {{site.latestRelease}} can be found below. 
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+*Click the name of any mod to learn more.*
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
-
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+  * [Ars Magica 2](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1292222-ars-magica-2-version-1-4-0-009-updated-february-8)
+  * [AnimationAPI](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1289836-animationapi-animate-your-entities-v1-2-3)
+  * [Applied Energistics 2](https://ae-mod.info/)
+  * [Aroma1997Core](https://minecraft.curseforge.com/projects/aroma1997core)
+  * [Baubles](https://minecraft.curseforge.com/projects/baubles)
+  * [Better Builder's Wands](https://minecraft.curseforge.com/projects/better-builders-wands)
+  * [BetterChests](https://minecraft.curseforge.com/projects/betterchest)
+  * [BigReactors](http://www.big-reactors.com/)
+  * [BloodMagic](https://minecraft.curseforge.com/projects/blood-magic)
+  * [Bookshelf](https://minecraft.curseforge.com/projects/bookshelf)
+  * [Buildcraft](https://minecraft.curseforge.com/projects/buildcraft)
+  * [ChickenChunks](https://minecraft.curseforge.com/projects/ChickenChunks)
+  * [Chisel - Venerable](https://minecraft.curseforge.com/projects/chisel-venerable)
+  * [CodeChickenCore](https://minecraft.curseforge.com/projects/CodeChickenCore)
+  * [CodeChickenLib](https://minecraft.curseforge.com/projects/CodeChickenCore)
+  * [CoFHCore](https://minecraft.curseforge.com/projects/CoFHCore)
+  * Damage Indicators Mod
+  * [Enchanting Plus](https://minecraft.curseforge.com/projects/enchanting-plus)
+  * [EnderCore](https://minecraft.curseforge.com/projects/endercore)
+  * [Ender IO](https://minecraft.curseforge.com/projects/ender-io)
+  * [EnderStorage](https://dev.bukkit.org/projects/enderstorage)
+  * [Enhanced Portals](https://github.com/enhancedportals/enhancedportals)
+  * [Extra Utilities](https://minecraft.curseforge.com/projects/extra-utilities)
+  * [Galacticraft Core](https://micdoodle8.com/mods/galacticraft/downloads)
+  * [Galacticraft Planets](https://micdoodle8.com/mods/galacticraft/downloads)
+  * [Hats](https://minecraft.curseforge.com/projects/hats)
+  * [iChunUtil](https://minecraft.curseforge.com/projects/ichunutil)
+  * [MalisisCore](https://minecraft.curseforge.com/projects/malisiscore)
+  * [MalisisDoors](http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2076338)
+  * [Mantle](https://minecraft.curseforge.com/projects/mantle)
+  * [Micdoodle Core](https://micdoodle8.com/mods/galacticraft/downloads)
+  * [MineFactory Reloaded](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1292152-powercrystals-mods-minefactoryreloaded#mfr)
+  * [Modular Powersuits](https://minecraft.curseforge.com/projects/modular-powersuits)
+  * [More Furnaces](https://minecraft.curseforge.com/projects/More-Furnaces)
+  * [Morph](https://minecraft.curseforge.com/projects/Morph)
+  * [NotEnoughItems (NEI)](https://minecraft.curseforge.com/projects/NotEnoughItems)
+  * [Numina](https://minecraft.curseforge.com/projects/numina)
+  * [OpenBlocks](https://minecraft.curseforge.com/projects/OpenBlocks)
+  * [OpenModsLib](https://minecraft.curseforge.com/projects/OpenModsLib)]
+  * [OreSpawn](http://www.orespawn.com/)
+  * [RandomThings](https://minecraft.curseforge.com/projects/random-things)
+  * [Tinker's Construct](https://minecraft.curseforge.com/projects/tinkers-construct)
+  * [Thaumcraft](https://minecraft.curseforge.com/projects/thaumcraft)
+  * [Thermal Expansion](https://minecraft.curseforge.com/projects/ThermalExpansion)
+  * [Thermal Foundation](https://minecraft.curseforge.com/projects/thermal-foundation)
+  * [Twilight Forest](https://minecraft.curseforge.com/projects/the-twilight-forest)
+  * [Xaero's Minimap](https://minecraft.curseforge.com/projects/xaeros-minimap)
