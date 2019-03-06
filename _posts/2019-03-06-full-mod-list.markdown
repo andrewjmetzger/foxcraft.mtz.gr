@@ -26,7 +26,7 @@ Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfo
   * [CodeChickenCore](https://minecraft.curseforge.com/projects/CodeChickenCore)
   * [CodeChickenLib](https://minecraft.curseforge.com/projects/CodeChickenCore)
   * [CoFHCore](https://minecraft.curseforge.com/projects/CoFHCore)
-  * Damage Indicators Mod
+  * [Damage Indicators Mod](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1286538-hit-splat-damage-indicators-v3-3-2-rpg-ui-and)
   * [Enchanting Plus](https://minecraft.curseforge.com/projects/enchanting-plus)
   * [EnderCore](https://minecraft.curseforge.com/projects/endercore)
   * [Ender IO](https://minecraft.curseforge.com/projects/ender-io)
