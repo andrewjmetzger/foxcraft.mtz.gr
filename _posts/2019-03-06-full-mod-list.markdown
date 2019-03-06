@@ -2,7 +2,7 @@
 layout: post
 title:  "Full Mod List"
 date:   2019-03-06
-permalink: /about/mod-list?{{ site.latestRelease }}
+permalink: /about/mod-list
 ---
 
 # Foxcraft {{ site.latestRelease }} Full Mod List

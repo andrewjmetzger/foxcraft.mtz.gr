@@ -11,7 +11,8 @@ permalink: /
 1. [Download Forge 1.7.10 Recommended Build (1558)](http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html)
 2. [Download Mods](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/andrewjmetzger/foxcraft.mtz.gr/tree/v1.0/static/mods/client&fileName=mods&rootDirectory=false)
 3. Download [Optional Custom Resource Pack](https://raw.githubusercontent.com/andrewjmetzger/foxcraft.mtz.gr/v1.0/static/resourcepacks/FoxcraftCustom/FoxcraftCustom.zip)
-4. Play at `play.foxcraft.mtz.gr`
+4. Play at 
+  ### `play.foxcraft.mtz.gr`
 
 ## Introduction
 
@@ -25,7 +26,7 @@ Foxcraft uses mods to enhance gameplay and provide an immersive experience. Here
 * Galacticraft
 * OreSpawn
 * Tinker's Construct
-* ... and [dozens of other mods](#) to explore ...
+* ... and [dozens of other mods](/about/mod-list) to explore ...
 
 ## Custom Resource Pack
 
@@ -37,4 +38,4 @@ Some vanilla block textures lovingly borrowed from [Werian by Filmjolk](https://
 
 Additional modified block textures by @andrewjmetzger, CC-BY-NC-SA 4.0.
 
-All other resources are copyrighted to their respective creators, used with love. See the modlist for information on individual licenses and usage conditions.
+All other resources are copyrighted to their respective creators, used with love. See the [full list of mods](/about/mod-list) for information on individual licenses and usage conditions.
