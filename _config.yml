@@ -1,12 +1,30 @@
-# Site settings
 title: Foxcraft
 email: 
-description: > # this means to ignore newlines until "baseurl:"
-  Foxcraft is a custom Forge-based modpack for Minecraft 1.7.10 that features an exciting combination of mods from all corners of Minecraftia. 
+description: > # Sample blog for my theme.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://foxcraft.mtz.gr" # the base hostname & protocol for your site
-twitter_username: 
-github_username:  
+url: "https://foxcraft.mtz.gr/" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
+
+kramdown:
+    input: GFM
+
+# Social Network
+social_links: false # If true show social links
+rss: false
+github: 'https://github.com/andrewjmetzger'
+
+plugins:
+- jekyll-paginate
+- jekyll-seo-tag
+
+# Pagination
+paginate: 3
+paginate_path: "page:num/"
+
+google-analytics: 
+
+exclude:
+  - vendor
