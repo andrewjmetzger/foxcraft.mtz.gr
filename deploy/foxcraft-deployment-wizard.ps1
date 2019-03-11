@@ -184,6 +184,7 @@ if ( $Config.EnableFTP ) {
             $session.PutFiles("$PWD\*", "/*").Check()
         }
         finally {
+            Write-Output "[INFO] Cleaning up, please wait..."
             $session.Dispose()
             Pop-Location
             Remove-Item -Path "$PWD\tmp\" -Recurse
@@ -221,12 +222,6 @@ if ( $Config.EnableFTP ) {
             exit 1
         }
 
-        
+        # End FTP operations
     }
-} 
-
-# End FTP operations
-
-Write-Output "[INFO] Deployment complete! Check the lines above for more details, then press any key to exit this wizard :-)"
-$HOST.UI.RawUI.ReadKey(“NoEcho,IncludeKeyDown”) | OUT-NULL
-$HOST.UI.RawUI.Flushinputbuffer()
+}
