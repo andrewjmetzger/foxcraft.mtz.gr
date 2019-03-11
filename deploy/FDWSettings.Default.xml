@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Settings>
+    <GithubSettings>
+        <Remote>https://github.com/andrewjmetzger/foxcraft.mtz.gr.git</Remote>
+    </GithubSettings>
+    <ServerSettings>
+        <EnableFTP>True</EnableFTP>
+        <FTPLib>C:\Program Files (x86)\WinSCP\WinSCPnet.dll</FTPLib>
+        <FTPAddress>0.0.0.0</FTPAddress>
+        <FTPPort>21</FTPPort>
+        <FTPUsername></FTPUsername>
+        <FTPPassword></FTPPassword>
+    </ServerSettings>
+</Settings>
