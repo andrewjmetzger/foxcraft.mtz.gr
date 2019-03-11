@@ -31,7 +31,8 @@ else {
 
 if ( Test-Path -Path "$PWD\.git" ) {
     $latestTag = (git describe)
-    Write-Output "[INFO] Latest version tag is $latestTag"
+    $latestTagDate = (git log -1 --format=%aI $latestTag).Split("T")[0]
+    Write-Output "[INFO] Latest version tag is $latestTag, committed on $latestTagDate."
 }
 else {
     Write-Error "[ERR] Directory '$PWD' is not a Github repository."
@@ -87,6 +88,46 @@ if ( $Config.EnableFTP ) {
         # Load WinSCP .NET assembly
         Add-Type -Path $Config.FTPLib
 
+        # Session.FileTransferred event handler
+        function FileTransferred {
+            param($e)
+ 
+            if ($e.Error -eq $Null) {
+                Write-Host "Upload of $($e.FileName) succeeded"
+            }
+            else {
+                Write-Host "Upload of $($e.FileName) failed: $($e.Error)"
+            }
+ 
+            if ($e.Chmod -ne $Null) {
+                if ($e.Chmod.Error -eq $Null) {
+                    Write-Host "Permissions of $($e.Chmod.FileName) set to $($e.Chmod.FilePermissions)"
+                }
+                else {
+                    Write-Host "Setting permissions of $($e.Chmod.FileName) failed: $($e.Chmod.Error)"
+                }
+ 
+            }
+            else {
+                Write-Host "Permissions of $($e.Destination) kept with their defaults"
+            }
+ 
+            if ($e.Touch -ne $Null) {
+                if ($e.Touch.Error -eq $Null) {
+                    Write-Host "Timestamp of $($e.Touch.FileName) set to $($e.Touch.LastWriteTime)"
+                }
+                else {
+                    Write-Host "Setting timestamp of $($e.Touch.FileName) failed: $($e.Touch.Error)"
+                }
+ 
+            }
+            else {
+                # This should never happen during "local to remote" synchronization
+                Write-Host "Timestamp of $($e.Destination) kept with its default (current time)"
+            }
+        }
+ 
+
         # Set up session options
         $sessionOptions = New-Object WinSCP.SessionOptions -Property @{
             Protocol   = [WinSCP.Protocol]::Ftp
@@ -99,6 +140,9 @@ if ( $Config.EnableFTP ) {
         $session = New-Object WinSCP.Session
 
         try {
+            # Continuously report synchronization progress 
+            $session.add_FileTransferred( { FileTransferred($_) } )
+ 
             # Connect
             $session.Open($sessionOptions)
 
@@ -136,7 +180,7 @@ if ( $Config.EnableFTP ) {
             $session.Open($sessionOptions)
 
             # Transfer files
-            Write-Output "[INFO] Uploading 'server.properties' to '$Config.FTPAddress/' as '$Config.FTPUsername'"
+            Write-Output "[INFO] Uploading modified files, please wait..."
             $session.PutFiles("$PWD\*", "/*").Check()
         }
         finally {
@@ -145,6 +189,39 @@ if ( $Config.EnableFTP ) {
             Pop-Location
             Remove-Item -Path "$PWD\tmp\" -Recurse
         }
+
+        # Synchronize server-side mods
+
+ 
+        try {
+            $session = New-Object WinSCP.Session
+            try {
+                # Continuously report synchronization progress 
+                $session.add_FileTransferred( { FileTransferred($_) } )
+ 
+                # Connect
+                $session.Open($sessionOptions)
+ 
+                # Synchronize files
+                Write-Output "[INFO] Synchronizing server-side mods, please wait..."
+                $synchronizationResult = $session.SynchronizeDirectories(
+                    [WinSCP.SynchronizationMode]::Remote, "$PWD/static/mods/server", "/mods", $False)
+ 
+                # Throw on any error
+                $synchronizationResult.Check()
+            }
+            finally {
+                # Disconnect, clean up
+                $session.Dispose()
+            }
+ 
+            exit 0
+        }
+        catch {
+            Write-Host "Error: $($_.Exception.Message)"
+            exit 1
+        }
+
         # End FTP operations
     }
 }
