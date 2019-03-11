@@ -225,3 +225,5 @@ if ( $Config.EnableFTP ) {
         # End FTP operations
     }
 }
+
+Write-Output "[INFO] Deployment complete! Check the console above for more information."
