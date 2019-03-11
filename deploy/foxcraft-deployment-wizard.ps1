@@ -30,7 +30,7 @@ else {
 
 
 if ( Test-Path -Path "$PWD\.git" ) {
-    $latestTag = (git describe)
+    $latestTag = (git describe --abbrev=0)
     $latestTagDate = (git log -1 --format=%aI $latestTag).Split("T")[0]
     Write-Output "[INFO] Latest version tag is $latestTag, committed on $latestTagDate."
 }
