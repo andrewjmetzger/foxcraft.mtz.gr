@@ -69,13 +69,10 @@ else {
 
 Remove-Item -Path "$PWD\pack.mcmeta.old"
 Write-Output "[INFO] Compressing resource pack to ZIP, please wait..."
-
-$zip = "$PWD\FoxcraftCustom.zip"
-$p = Get-ChildItem -Path $PWD
-Compress-Archive -Path $p -DestinationPath $zip -CompressionLevel Fastest -Force
-Write-Output "[INFO] Finished compressing resource pack."
-
 Pop-Location
+
+Start-Process $PWD/deploy/7za.exe -ArgumentList "a -tzip $PWD/static/resourcepacks/FoxcraftCustom/FoxcraftCustom.zip $PWD/static/resourcepacks/FoxcraftCustom/*" -NoNewWindow -Wait
+Write-Output "[INFO] Finished compressing resource pack."
 
 # Update site
 $filePath = "$PWD\_config.yml"
