@@ -1,5 +1,9 @@
+# Site-specific configuration
+modpackVersion: 'v1.1.10'
+minecraftVersion: '1.7.10'
+
+
 title: Foxcraft
-email: 
 description: > # Sample blog for my theme.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://foxcraft.mtz.gr/" # the base hostname & protocol for your site
@@ -28,7 +32,3 @@ google-analytics:
 
 exclude:
   - vendor
-
-# Site-specific configuration
-modpackVersion: 'v1.1.10'
-minecraftVersion: '1.7.10'

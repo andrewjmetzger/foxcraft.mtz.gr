@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Getting Started | Foxcraft {{ site.minecraftVersion }}
+title: Getting Started
 permalink: /
 ---
 
