@@ -1,4 +1,4 @@
-# Foxcraft Updater
+# Foxcraft Deployment Wizard
 # DO NOT MODIFY THIS SCRIPT 
 # To configure your deployment, create a configuration file. 
 # Documentation: https://github.com/andrewjmetzger/foxcraft.mtz.gr/wiki/Foxcraft-Deployment-Wizard:-Automatic-Deployment-with-PowerShell
@@ -12,7 +12,6 @@ Write-Output "Current location is $PWD"
 if ( Test-Path -Path "$PWD\deploy\FDWSettings.xml" ) {
     [xml]$ConfigFile = Get-Content -Path "$PWD\deploy\FDWSettings.xml"
     $Config = @{
-        GithubRemote = $ConfigFile.Settings.GithubSettings.Remote
         EnableFTP    = $ConfigFile.Settings.ServerSettings.EnableFTP
         FTPLib       = $ConfigFile.Settings.ServerSettings.FTPLib
         FTPAddress   = $ConfigFile.Settings.ServerSettings.FTPAddress
@@ -30,6 +29,7 @@ else {
 
 
 if ( Test-Path -Path "$PWD\.git" ) {
+    $gitRemote = (git config --get remote.origin.url)
     $latestTag = (git describe --abbrev=0)
     $latestTagDate = (git log -1 --format=%aI $latestTag).Split("T")[0]
     Write-Output "[INFO] Latest version tag is $latestTag, committed on $latestTagDate."
@@ -40,7 +40,7 @@ if ( Test-Path -Path "$PWD\.git" ) {
     Write-Output "[INFO] Next tag will be $nextTag."
 }
 else {
-    Write-Error "[ERR] Directory '$PWD' is not linked to a Github repository."
+    Write-Error "[ERR] Directory '$PWD' is not linked to a valid repository."
     break
 }
 
@@ -78,8 +78,8 @@ Write-Output "[INFO] Finished compressing resource pack."
 $filePath = "$PWD\_config.yml"
 $file = (Get-Content -Path "$filePath")
 if ($file -Match "modpackVersion") {
-        $file -replace "modpackVersion.+", "modpackVersion: '$nextTag'" | Set-Content -Path "$filePath"
-        Write-Output "[INFO] Finished modifying '$filePath'."
+    $file -replace "modpackVersion.+", "modpackVersion: '$nextTag'" | Set-Content -Path "$filePath"
+    Write-Output "[INFO] Finished modifying '$filePath'."
 }
 else {
     Write-Error "[ERR] Could not modify '$filePath'."
@@ -87,13 +87,13 @@ else {
 
 
 # Update git
-Write-Output "[GIT] Connecting to remote $GithubRemote"
+Write-Output "[INFO] Connecting to remote '$gitRemote'"
 git add -A
 git commit -m "FDW: Automatic deploy for $nextTag"
 git push origin master
 git tag -a $nextTag -m "FDW: Automatic tag for version $nextVersion"
 git push origin $nextTag
-Write-Output "[GIT] Finished tagging '$nextTag'"
+Write-Output "[INFO] Successfully tagged commit with '$nextTag'"
 
 
 # FTP Stuff
@@ -214,46 +214,39 @@ if ( $Config.EnableFTP ) {
             $session.PutFiles("$PWD\*", "/*").Check()
         }
         finally {
-            Write-Output "[INFO] Cleaning up, please wait..."
             $session.Dispose()
             Pop-Location
             Remove-Item -Path "$PWD\tmp\" -Recurse
         }
 
         # Synchronize server-side mods
-
- 
+        $session = New-Object WinSCP.Session
         try {
-            $session = New-Object WinSCP.Session
-            try {
-                # Continuously report synchronization progress 
-                $session.add_FileTransferred( { FileTransferred($_) } )
+            # Continuously report synchronization progress 
+            $session.add_FileTransferred( { FileTransferred($_) } )
  
-                # Connect
-                $session.Open($sessionOptions)
+            # Connect
+            $session.Open($sessionOptions)
  
-                # Synchronize files
-                Write-Output "[INFO] Synchronizing server-side mods, please wait..."
-                $synchronizationResult = $session.SynchronizeDirectories(
-                    [WinSCP.SynchronizationMode]::Remote, "$PWD/static/mods/server", "/mods", $False)
+            # Synchronize files
+            Write-Output "[INFO] Synchronizing server-side mods, please wait..."
+            $synchronizationResult = $session.SynchronizeDirectories(
+                [WinSCP.SynchronizationMode]::Remote, "$PWD/static/mods/server", "/mods", $False)
  
-                # Throw on any error
-                $synchronizationResult.Check()
-            }
-            finally {
-                # Disconnect, clean up
-                $session.Dispose()
-            }
- 
-            exit 0
+            # Throw on any error
+            $synchronizationResult.Check()
         }
         catch {
             Write-Host "Error: $($_.Exception.Message)"
             exit 1
         }
 
-        # End FTP operations
+        finally {
+            # Disconnect, clean up
+            $session.Dispose()
+        }
     }
+    # End FTP operations
 }
 
 Write-Output "[INFO] Deployment complete! Check the console above for more information."
