@@ -30,5 +30,5 @@ exclude:
   - vendor
 
 # Site-specific configuration
-modpackVersion: 'v1.0'
+modpackVersion: 'v1.1.10'
 minecraftVersion: '1.7.10'
