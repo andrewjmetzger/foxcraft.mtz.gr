@@ -33,9 +33,14 @@ if ( Test-Path -Path "$PWD\.git" ) {
     $latestTag = (git describe --abbrev=0)
     $latestTagDate = (git log -1 --format=%aI $latestTag).Split("T")[0]
     Write-Output "[INFO] Latest version tag is $latestTag, committed on $latestTagDate."
+    
+    $latestVersion = [version]((git describe --abbrev=0) -Replace "v", "")
+    $nextVersion = ([string]$latestVersion.Major) + "." + ([string]$latestVersion.Minor) + "." + ([string]([int]$latestVersion.Build + 1))
+    $nextTag = "v$nextVersion"
+    Write-Output "[INFO] Next tag will be $nextTag."
 }
 else {
-    Write-Error "[ERR] Directory '$PWD' is not a Github repository."
+    Write-Error "[ERR] Directory '$PWD' is not linked to a Github repository."
     break
 }
 
@@ -54,7 +59,7 @@ Write-Output "[INFO] Successfully backed up 'pack.mcmeta' to 'pack.mcmeta.old'"
 # Replace placeholder with the latest tagged release number
 $file = (Get-Content "$PWD\pack.mcmeta")
 IF ($file -Match "v\d+\.\d+\.\d+") {
-    $file -Replace "v\d+\.\d+\.\d+", "$latestTag" | Set-Content -Path "$PWD\pack.mcmeta"
+    $file -Replace "v\d+\.\d+\.\d+", "$nextTag" | Set-Content -Path "$PWD\pack.mcmeta"
 }
 
 Remove-Item -Path "$PWD\pack.mcmeta.old"
@@ -66,8 +71,12 @@ Compress-Archive -Path $p -DestinationPath $zip -CompressionLevel Fastest -Force
 Write-Output "[INFO] Finished compressing resource pack."
 
 Pop-Location
-Write-Output "Current location is $PWD"
 
+# Update git
+#foo
+
+<#
+# FTP Stuff
 if ( $Config.EnableFTP ) {
 
     Write-Output "[INFO] FTP is enabled, let's go!"
@@ -225,5 +234,7 @@ if ( $Config.EnableFTP ) {
         # End FTP operations
     }
 }
+#>
+
 
 Write-Output "[INFO] Deployment complete! Check the console above for more information."
