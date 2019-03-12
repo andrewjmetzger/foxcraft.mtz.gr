@@ -9,10 +9,9 @@ permalink: /
 ## Quick Start
 
 1. [Download Forge 1.7.10 Recommended Build (1558)](http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html)
-2. [Download Mods](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/andrewjmetzger/foxcraft.mtz.gr/tree/v1.0/static/mods/client&fileName=mods&rootDirectory=false)
-3. Download [Optional Custom Resource Pack](https://raw.githubusercontent.com/andrewjmetzger/foxcraft.mtz.gr/v1.0/static/resourcepacks/FoxcraftCustom/FoxcraftCustom.zip)
-4. Play at 
-  ### `play.foxcraft.mtz.gr`
+2. [Download Mods](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/andrewjmetzger/foxcraft.mtz.gr/tree/{{ site.modpackVersion }}/static/mods/client&fileName=mods&rootDirectory=false)
+3. Download [Optional Custom Resource Pack](https://raw.githubusercontent.com/andrewjmetzger/foxcraft.mtz.gr/{{ site.modpackVersion }}/static/resourcepacks/FoxcraftCustom/FoxcraftCustom.zip)
+4. Play at `play.foxcraft.mtz.gr`
 
 ## Introduction
 
@@ -22,7 +21,7 @@ Foxcraft is a custom Forge-based modpack for Minecraft that features an exciting
 
 Foxcraft uses mods to enhance gameplay and provide an immersive experience. Here are just a few of the mods installed:
 
-* Ars Magica
+* Ars Magica 2
 * Galacticraft
 * OreSpawn
 * Tinker's Construct
