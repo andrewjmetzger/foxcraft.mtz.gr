@@ -34,7 +34,7 @@ if ( Test-Path -Path "$PWD\.git" ) {
     $latestTagDate = (git log -1 --format=%aI $latestTag).Split("T")[0]
     Write-Output "[INFO] Latest version tag is $latestTag, committed on $latestTagDate."
     
-    $latestVersion = [version]((git describe --abbrev=0) -Replace "v", "")
+    $latestVersion = [version](($latestTag) -Replace "v", "")
     $nextVersion = ([string]$latestVersion.Major) + "." + ([string]$latestVersion.Minor) + "." + ([string]([int]$latestVersion.Build + 1))
     $nextTag = "v$nextVersion"
     Write-Output "[INFO] Next tag will be $nextTag."
@@ -57,9 +57,14 @@ Copy-Item -Path "$PWD\pack.mcmeta" -Destination "$PWD\pack.mcmeta.old" -Force
 Write-Output "[INFO] Successfully backed up 'pack.mcmeta' to 'pack.mcmeta.old'"
 
 # Replace placeholder with the latest tagged release number
-$file = (Get-Content "$PWD\pack.mcmeta")
-IF ($file -Match "v\d+\.\d+\.\d+") {
-    $file -Replace "v\d+\.\d+\.\d+", "$nextTag" | Set-Content -Path "$PWD\pack.mcmeta"
+$filePath = "$PWD\pack.mcmeta"
+$file = (Get-Content "$filePath")
+if ($file -Match "v\d+\.\d+\.\d+") {
+    $file -Replace "v\d+\.\d+\.\d+", "$nextTag" | Set-Content -Path "$filePath"
+    Write-Output "[INFO] Finished modifying '$filePath'."
+}
+else {
+    Write-Error "[ERR] Could not modify '$filePath'."
 }
 
 Remove-Item -Path "$PWD\pack.mcmeta.old"
@@ -72,10 +77,28 @@ Write-Output "[INFO] Finished compressing resource pack."
 
 Pop-Location
 
-# Update git
-#foo
+# Update site
+$filePath = "$PWD\_config.yml"
+$file = (Get-Content -Path "$filePath")
+if ($file -Match "modpackVersion") {
+        $file -replace "modpackVersion.+", "modpackVersion: '$nextTag'" | Set-Content -Path "$filePath"
+        Write-Output "[INFO] Finished modifying '$filePath'."
+}
+else {
+    Write-Error "[ERR] Could not modify '$filePath'."
+}
 
-<#
+
+# Update git
+Write-Output "[GIT] Connecting to remote $GithubRemote"
+git add -A
+git commit -m "FDW: Automatic deploy for $nextTag"
+git push origin master
+git tag -a $nextTag -m "FDW: Automatic tag for version $nextVersion"
+git push origin $nextTag
+Write-Output "[GIT] Finished tagging '$nextTag'"
+
+
 # FTP Stuff
 if ( $Config.EnableFTP ) {
 
@@ -164,21 +187,22 @@ if ( $Config.EnableFTP ) {
         }
 
         # Modify files
-        $file = (Get-Content -Path "server.properties")
+        $filePath = "server.properties"
+        $file = (Get-Content -Path "$filePath")
         $descriptor = $Config.GithubRemote.Split("/")[3]
         $descriptor += "/"
         $descriptor += $Config.GithubRemote.Split("/")[4]
         $descriptor = $descriptor -replace '.git', ''
-        $raw = "https\://raw.githubusercontent.com/$descriptor/$latestTag"
+        $raw = "https\://raw.githubusercontent.com/$descriptor/$nextTag"
         $raw += '/static/resourcepacks/FoxcraftCustom/FoxcraftCustom.zip'
         Write-Output "New pack URL is '$raw'"
 
         if ($file -Match "resource-pack") {
-            $file -Replace "resource-pack=.+", "resource-pack=$raw" | Set-Content -Path "server.properties"
-            Write-Output "[INFO] Finished modifying 'server.properties'."
+            $file -Replace "resource-pack=.+", "resource-pack=$raw" | Set-Content -Path "$filePath"
+            Write-Output "[INFO] Finished modifying '$filePath'."
         }
         else {
-            Write-Error "[ERR] Could not modify 'server.properties'."
+            Write-Error "[ERR] Could not modify '$filePath'."
         }
 
         # Upload
@@ -234,7 +258,5 @@ if ( $Config.EnableFTP ) {
         # End FTP operations
     }
 }
-#>
-
 
 Write-Output "[INFO] Deployment complete! Check the console above for more information."
