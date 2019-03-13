@@ -186,9 +186,9 @@ if ( $Config.EnableFTP ) {
         # Modify files
         $filePath = "server.properties"
         $file = (Get-Content -Path "$filePath")
-        $descriptor = $Config.GithubRemote.Split("/")[3]
+        $descriptor = $gitRemote.Split("/")[3]
         $descriptor += "/"
-        $descriptor += $Config.GithubRemote.Split("/")[4]
+        $descriptor += $gitRemote.Split("/")[4]
         $descriptor = $descriptor -replace '.git', ''
         $raw = "https\://raw.githubusercontent.com/$descriptor/$nextTag"
         $raw += '/static/resourcepacks/FoxcraftCustom/FoxcraftCustom.zip'
