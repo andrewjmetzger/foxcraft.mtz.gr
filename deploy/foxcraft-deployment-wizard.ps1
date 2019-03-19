@@ -12,12 +12,12 @@ Write-Output "Current location is $PWD"
 if ( Test-Path -Path "$PWD\deploy\FDWSettings.xml" ) {
     [xml]$ConfigFile = Get-Content -Path "$PWD\deploy\FDWSettings.xml"
     $Config = @{
-        EnableFTP    = $ConfigFile.Settings.ServerSettings.EnableFTP
-        FTPLib       = $ConfigFile.Settings.ServerSettings.FTPLib
-        FTPAddress   = $ConfigFile.Settings.ServerSettings.FTPAddress
-        FTPPort      = $ConfigFile.Settings.ServerSettings.FTPPort
-        FTPUsername  = $ConfigFile.Settings.ServerSettings.FTPUsername
-        FTPPassword  = $ConfigFile.Settings.ServerSettings.FTPPassword
+        EnableFTP   = $ConfigFile.Settings.ServerSettings.EnableFTP
+        FTPLib      = $ConfigFile.Settings.ServerSettings.FTPLib
+        FTPAddress  = $ConfigFile.Settings.ServerSettings.FTPAddress
+        FTPPort     = $ConfigFile.Settings.ServerSettings.FTPPort
+        FTPUsername = $ConfigFile.Settings.ServerSettings.FTPUsername
+        FTPPassword = $ConfigFile.Settings.ServerSettings.FTPPassword
     }
     Write-Output "[INFO] Script is configured. Thanks for reading the docs!"
 }
@@ -27,16 +27,12 @@ else {
 }
 
 
-
 if ( Test-Path -Path "$PWD\.git" ) {
     $gitRemote = (git config --get remote.origin.url)
     $latestTag = (git describe --abbrev=0)
     $latestTagDate = (git log -1 --format=%aI $latestTag).Split("T")[0]
     Write-Output "[INFO] Latest version tag is $latestTag, committed on $latestTagDate."
-    
-    $latestVersion = [version](($latestTag) -Replace "v", "")
-    $nextVersion = ([string]$latestVersion.Major) + "." + ([string]$latestVersion.Minor) + "." + ([string]([int]$latestVersion.Build + 1))
-    $nextTag = "v$nextVersion"
+    $nextTag = (Read-Host -Prompt "Enter the next tag (ex: v1.2.3)")
     Write-Output "[INFO] Next tag will be $nextTag."
 }
 else {
@@ -44,19 +40,11 @@ else {
     break
 }
 
-# Resource pack
+
+### Update resource pack
 Push-Location "$PWD\static\resourcepacks\FoxcraftCustom"
 
-if ( Test-Path "$PWD\FoxcraftCustom.zip" ) {
-    Write-Information "[INFO] Found existing ZIP, will remove."
-    Remove-Item "$PWD\FoxcraftCustom.zip" 
-}
-
-# Create a copy of the old mcmeta to revert if needed
-Copy-Item -Path "$PWD\pack.mcmeta" -Destination "$PWD\pack.mcmeta.old" -Force
-Write-Output "[INFO] Successfully backed up 'pack.mcmeta' to 'pack.mcmeta.old'"
-
-# Replace placeholder with the latest tagged release number
+# Update pack.mcmeta
 $filePath = "$PWD\pack.mcmeta"
 $file = (Get-Content "$filePath")
 if ($file -Match "v\d+\.\d+\.\d+") {
@@ -67,14 +55,24 @@ else {
     Write-Error "[ERR] Could not modify '$filePath'."
 }
 
-Remove-Item -Path "$PWD\pack.mcmeta.old"
-Write-Output "[INFO] Compressing resource pack to ZIP, please wait..."
+if ( Test-Path "$PWD\FoxcraftCustom.zip" ) {
+    Write-Information "[INFO] Found existing ZIP, will remove."
+    Remove-Item "$PWD\FoxcraftCustom.zip" 
+}
+
+
 Pop-Location
 
+
+Write-Output "[INFO] Compressing resource pack to ZIP, please wait..."
 Start-Process $PWD/deploy/7za.exe -ArgumentList "a -tzip $PWD/static/resourcepacks/FoxcraftCustom/FoxcraftCustom.zip $PWD/static/resourcepacks/FoxcraftCustom/*" -NoNewWindow -Wait
 Write-Output "[INFO] Finished compressing resource pack."
 
-# Update site
+
+### TODO: Update launcher
+
+
+### Update site
 $filePath = "$PWD\_config.yml"
 $file = (Get-Content -Path "$filePath")
 if ($file -Match "modpackVersion") {
@@ -86,17 +84,21 @@ else {
 }
 
 
-# Update git
+### Update git
 Write-Output "[INFO] Connecting to remote '$gitRemote'"
 git add -A
 git commit -m "FDW: Automatic deploy for $nextTag"
 git push origin master
-git tag -a $nextTag -m "FDW: Automatic tag for version $nextVersion"
+git tag -a $nextTag -m "FDW: Automatic tag for $nextTag"
 git push origin $nextTag
 Write-Output "[INFO] Successfully tagged commit with '$nextTag'"
 
 
-# FTP Stuff
+#==============================================================================#
+#  FTP OPERATIONS BEGIN HERE - REQUIRES A CONFIGFURED FTP SERVER AND SETTINGS  #
+#==============================================================================#
+
+### Update server.properties
 if ( $Config.EnableFTP ) {
 
     Write-Output "[INFO] FTP is enabled, let's go!"
@@ -108,7 +110,7 @@ if ( $Config.EnableFTP ) {
         Write-Error "[ERR] FTP is enabled, but not configured!"
     }
     else {
-        # Begin FTP operations
+        # FTP is properly configured 
         Remove-Item "$PWD\tmp\" -Recurse -Force -ErrorAction Ignore
         New-Item "$PWD\tmp" -ItemType Directory -Force | Out-Null
         Push-Location "$PWD\tmp\"
@@ -156,7 +158,6 @@ if ( $Config.EnableFTP ) {
             }
         }
  
-
         # Set up session options
         $sessionOptions = New-Object WinSCP.SessionOptions -Property @{
             Protocol   = [WinSCP.Protocol]::Ftp
@@ -217,33 +218,6 @@ if ( $Config.EnableFTP ) {
             $session.Dispose()
             Pop-Location
             Remove-Item -Path "$PWD\tmp\" -Recurse
-        }
-
-        # Synchronize server-side mods
-        $session = New-Object WinSCP.Session
-        try {
-            # Continuously report synchronization progress 
-            $session.add_FileTransferred( { FileTransferred($_) } )
- 
-            # Connect
-            $session.Open($sessionOptions)
- 
-            # Synchronize files
-            Write-Output "[INFO] Synchronizing server-side mods, please wait..."
-            $synchronizationResult = $session.SynchronizeDirectories(
-                [WinSCP.SynchronizationMode]::Remote, "$PWD/static/mods/server", "/mods", $False)
- 
-            # Throw on any error
-            $synchronizationResult.Check()
-        }
-        catch {
-            Write-Host "Error: $($_.Exception.Message)"
-            exit 1
-        }
-
-        finally {
-            # Disconnect, clean up
-            $session.Dispose()
         }
     }
     # End FTP operations
