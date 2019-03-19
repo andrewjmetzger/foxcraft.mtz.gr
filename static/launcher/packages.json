@@ -4,8 +4,8 @@
     {
       "title" : "Foxcraft",
       "name" : "foxcraft",
-      "version" : "v2.0.0",
-      "location" : "foxcraft-v2.0.0.json",
+      "version" : "v2.1.0",
+      "location" : "foxcraft.json",
       "priority" : 0
     }
   ]
