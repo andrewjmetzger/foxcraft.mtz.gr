@@ -2,3 +2,4 @@ _site
 .sass-cache
 deploy/FDWSettings.xml
 deploy/7za.exe
+deploy/launcher
