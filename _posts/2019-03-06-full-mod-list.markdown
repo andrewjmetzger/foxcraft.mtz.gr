@@ -36,6 +36,7 @@ Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfo
 * [Extra Utilities](https://minecraft.curseforge.com/projects/extra-utilities)
 * [Galacticraft Core](https://micdoodle8.com/mods/galacticraft/downloads)
 * [Galacticraft Planets](https://micdoodle8.com/mods/galacticraft/downloads)
+* [Godzilla Mod](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1289451-wip-1-7-10-godzilla-mod-now-apart-of-the-legend)
 * [Hats](https://minecraft.curseforge.com/projects/hats)
 * [iChunUtil](https://minecraft.curseforge.com/projects/ichunutil)
 * [MalisisCore](https://minecraft.curseforge.com/projects/malisiscore)
