@@ -34,3 +34,4 @@ exclude:
   - vendor
 include:
  - _redirects
+ - _travis.yml
