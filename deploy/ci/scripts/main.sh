@@ -14,7 +14,7 @@ do
         number=$RANDOM
         cd "$d"
         ls
-        java -jar ../build.jar --version "$number" --input . --output ../upload --manifest-dest "../upload/$safed.json"
+        java -jar ../launcher-builder-all.jar --version "$number" --input . --output ../upload --manifest-dest "../upload/$safed.json"
         cd ..
         echo "Building directory attempted to complete"
     fi
