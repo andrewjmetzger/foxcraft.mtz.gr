@@ -1,0 +1,6 @@
+# About: https://www.netlify.com/docs/redirects/
+
+# Format: /local-path   remote-path   status-code
+
+# Custom link for discord server
+/discord    https://discord.gg/UCYtkaZ  302

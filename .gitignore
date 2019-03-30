@@ -3,3 +3,4 @@ _site
 deploy/FDWSettings.xml
 deploy/7za.exe
 deploy/launcher
+static/config/_SERVER/Chikachi/DiscordIntegration.json

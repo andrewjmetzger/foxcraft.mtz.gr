@@ -7,7 +7,7 @@ permalink: /about/mod-list
 
 # Foxcraft {{ site.modpackVersion }} Full Mod List
 
-Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfortably on the main page. While those mods are at the heart of Foxcraft, there are dozens of additional mods to explore. A comprehensive account of all mods installed for Foxcraft {{ site.modpackVersion }} can be found below.
+Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfortably on the main page. While those mods are at the heart of Foxcraft, there are dozens of additional mods to explore. A comprehensive index of all mods installed with Foxcraft {{ site.modpackVersion }} can be found below.
 
 *Click the name of any mod to learn more.*
 
@@ -19,6 +19,7 @@ Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfo
 * [Better Builder's Wands](https://minecraft.curseforge.com/projects/better-builders-wands)
 * [BetterChests](https://minecraft.curseforge.com/projects/betterchest)
 * [BigReactors](http://www.big-reactors.com/)
+* [Biomes O Plenty](https://github.com/Glitchfiend/BiomesOPlenty)
 * [BloodMagic](https://minecraft.curseforge.com/projects/blood-magic)
 * [Bookshelf](https://minecraft.curseforge.com/projects/bookshelf)
 * [Buildcraft](https://minecraft.curseforge.com/projects/buildcraft)
@@ -27,13 +28,16 @@ Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfo
 * [CodeChickenCore](https://minecraft.curseforge.com/projects/CodeChickenCore)
 * [CodeChickenLib](https://minecraft.curseforge.com/projects/CodeChickenCore)
 * [CoFHCore](https://minecraft.curseforge.com/projects/CoFHCore)
+* [Custom Main Menu](https://minecraft.curseforge.com/projects/custom-main-menu) (*client-side only*)
 * [Damage Indicators Mod](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1286538-hit-splat-damage-indicators-v3-3-2-rpg-ui-and)
+* [Discord Integration](https://minecraft.curseforge.com/projects/discordintegration) (*server-side only*)
 * [Enchanting Plus](https://minecraft.curseforge.com/projects/enchanting-plus)
 * [EnderCore](https://minecraft.curseforge.com/projects/endercore)
 * [Ender IO](https://minecraft.curseforge.com/projects/ender-io)
 * [EnderStorage](https://dev.bukkit.org/projects/enderstorage)
 * [Enhanced Portals](https://github.com/enhancedportals/enhancedportals)
 * [Extra Utilities](https://minecraft.curseforge.com/projects/extra-utilities)
+* [Forge Essentials](https://minecraft.curseforge.com/projects/forge-essentials-74735) (*server-side only*)
 * [Galacticraft Core](https://micdoodle8.com/mods/galacticraft/downloads)
 * [Galacticraft Planets](https://micdoodle8.com/mods/galacticraft/downloads)
 * [Godzilla Mod](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1289451-wip-1-7-10-godzilla-mod-now-apart-of-the-legend)
@@ -43,6 +47,7 @@ Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfo
 * [MalisisDoors](http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/2076338)
 * [Mantle](https://minecraft.curseforge.com/projects/mantle)
 * [Micdoodle Core](https://micdoodle8.com/mods/galacticraft/downloads)
+* [Mine & Blade: Battlegear 2](https://minecraft.curseforge.com/projects/mb-battlegear-2)
 * [MineFactory Reloaded](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1292152-powercrystals-mods-minefactoryreloaded#mfr)
 * [Modular Powersuits](https://minecraft.curseforge.com/projects/modular-powersuits)
 * [More Furnaces](https://minecraft.curseforge.com/projects/More-Furnaces)
@@ -58,4 +63,4 @@ Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfo
 * [Thermal Expansion](https://minecraft.curseforge.com/projects/ThermalExpansion)
 * [Thermal Foundation](https://minecraft.curseforge.com/projects/thermal-foundation)
 * [Twilight Forest](https://minecraft.curseforge.com/projects/the-twilight-forest)
-* [Xaero's Minimap](https://minecraft.curseforge.com/projects/xaeros-minimap)
+* [Xaero's Minimap](https://minecraft.curseforge.com/projects/xaeros-minimap) (*client-side only*)

@@ -8,10 +8,10 @@ permalink: /
 
 ## Quick Start
 
-1. [Download Forge 1.7.10 Recommended Build (1558)](http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html)
+1. [Download Forge 10.13.4.1566](http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html) (Click "Show all versions" first)
 2. [Download the Mods](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/andrewjmetzger/foxcraft.mtz.gr/tree/{{ site.modpackVersion }}/static/mods/client&fileName=mods&rootDirectory=false)
 3. Add **Foxcraft** to your Minecraft server list:
-   1. Use the server address **`play.foxcraft.mtz.gr`**
+   1. Use the server address **`play.foxcraft.mtz.gr`**.
    2. Make sure to set **Server Resource Packs: Enabled** to get the full experience.
    3. Click **Done** to save your changes.
 4. Click **Join Server**
@@ -32,7 +32,7 @@ Foxcraft uses mods to enhance gameplay and provide an immersive experience. Here
 
 ## Foxcraft's Custom Resource Pack
 
-To ensure the most immersive experience, Foxcraft bundles custom textures for many of the blocks in the game. For players with Server Resource Packs enabled, the custom look should be used automatically. Players with Server Resource Packs disabled should [download the resource pack manually](https://raw.githubusercontent.com/andrewjmetzger/foxcraft.mtz.gr/v1.0/static/resourcepacks/FoxcraftCustom/FoxcraftCustom.zip), and apply it before playing.
+To ensure the most immersive experience, Foxcraft bundles custom textures for many of the blocks in the game. For players with Server Resource Packs enabled, the custom look should be used automatically. Players with Server Resource Packs disabled should [download the resource pack manually](https://raw.githubusercontent.com/andrewjmetzger/foxcraft.mtz.gr/{{ site.modpackVersion }}/static/resourcepacks/FoxcraftCustom/FoxcraftCustom.zip), and apply it before playing.
 
 ### Legalese
 
