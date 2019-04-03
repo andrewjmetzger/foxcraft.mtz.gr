@@ -10,7 +10,7 @@ permalink: /
 
 **NEW:** Join the official Foxcraft discord by clicking on the button below
 
-![Join the Official Foxcraft Discord](static/img/discord_button.png)
+![Join the Official Foxcraft Discord](assets/img/discord_button.png)
 
 *Or, use this direct link: https://foxcraft.mtz.gr/discord*
 
