@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Full Mod List"
-date:   2019-03-06
+date:   2019-04-02
 permalink: /about/mod-list
 ---
 
@@ -52,10 +52,10 @@ Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfo
 * [Modular Powersuits](https://minecraft.curseforge.com/projects/modular-powersuits)
 * [More Furnaces](https://minecraft.curseforge.com/projects/More-Furnaces)
 * [Morph](https://minecraft.curseforge.com/projects/Morph)
-* [NotEnoughItems (NEI)](https://minecraft.curseforge.com/projects/NotEnoughItems)
+* [NotEnoughItems (NEI)](https://minecraft.curseforge.com/projects/NotEnoughItems) (*client-side only*)
 * [Numina](https://minecraft.curseforge.com/projects/numina)
 * [OpenBlocks](https://minecraft.curseforge.com/projects/OpenBlocks)
-* [OpenModsLib](https://minecraft.curseforge.com/projects/OpenModsLib)]
+* [OpenModsLib](https://minecraft.curseforge.com/projects/OpenModsLib)
 * [OreSpawn](http://www.orespawn.com/)
 * [RandomThings](https://minecraft.curseforge.com/projects/random-things)
 * [Tinker's Construct](https://minecraft.curseforge.com/projects/tinkers-construct)
