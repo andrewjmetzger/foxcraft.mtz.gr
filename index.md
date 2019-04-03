@@ -6,6 +6,14 @@ permalink: /
 
 # Foxcraft {{ site.modpackVersion }} for {{ site.minecraftVersion }}
 
+## Discord Server
+
+**NEW:** Join the official Foxcraft discord by clicking on the button below
+
+![Join the Official Foxcraft Discord](static/img/discord_button.png)
+
+*Or, use this direct link: https://foxcraft.mtz.gr/discord*
+
 ## Quick Start
 
 1. [Download Forge 10.13.4.1566](http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html) (Click "Show all versions" first)
