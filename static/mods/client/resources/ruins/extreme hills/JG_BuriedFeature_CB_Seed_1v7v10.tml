@@ -1,0 +1,49 @@
+
+# Buried Feature Seed
+# 29 Apr 2015; MC 1.7.10
+# Author: Jordan_Greywolf
+
+# Note: The idea behind this experiment is to use Command Blocks 
+# (RUINSTRIGGER and /testruin) to get around the Ruins Mod
+# build-point spawning rules, so underground features can
+# be added without requiring that the surface area be "leveled"
+# to maximize spawn chances (based on observation that structures
+# with large footprints have difficulty spawning in hilly areas
+# without use of "max_leveling").  This "seed" structure has a
+# pretty small footprint (1x1) so it has a decent chance of
+# finding a valid build point.  When it invokes /testruin to
+# summon a random underground structure, that structure won't be
+# subjected to further build-point testing.
+
+biomesToSpawnIn=autumn hills,crag,dry river,enchanted forest,extreme hills,extreme hills+,extreme hills+ m,extreme hills m,forest,forested hills,foresthills,green hills,magical forest,mountain,mountain ridge,ominous woods,overgrown greens,sacred springs,savanna plateau,shield,thicket,volcano,wasteland,wondrous woods,wonderous woods,woodland,woodlands
+
+weight=5
+embed_into_distance=0
+
+unacceptable_target_blocks=water,flowing_water,lava,flowing_lava,mushroom,cloud,Natura:Cloud,slime_congealed,slime_dirt,slime_grass
+
+dimensions=2,1,1
+allowable_overhang=50
+max_cut_in=0
+cut_in_buffer=0
+max_leveling=0
+leveling_buffer=0
+preserve_water=0
+preserve_lava=0
+preserve_plants=1
+
+# "Hush" Rule (to minimize Command Block chatter)
+rule1=0,100,CommandBlock:RUINSTRIGGER /gamerule commandBlockOutput false:@
+
+# Random Underground Feature
+rule2=1,100,CommandBlock:RUINSTRIGGER /testruin TP_Cave_LavaHollow ~0 ~0 ~0:@,CommandBlock:RUINSTRIGGER /testruin TP_Cave_WaterHollow ~0 ~0 ~0:@,CommandBlock:RUINSTRIGGER /testruin TP_CollapsedTunnel ~0 ~0 ~0:@,CommandBlock:RUINSTRIGGER /testruin TP_CrystalCavern ~0 ~0 ~0:@,CommandBlock:RUINSTRIGGER /testruin TP_ObsidianGeode ~0 ~0 ~0:@,CommandBlock:RUINSTRIGGER /testruin TP_VaultStatues ~0 ~0 ~0:@,CommandBlock:RUINSTRIGGER /testruin TP_GargoyleStone ~0 ~0 ~0:@,CommandBlock:RUINSTRIGGER /testruin TP_Tree_GnarledOak ~0 ~0 ~0:@,CommandBlock:RUINSTRIGGER /testruin TP_Tree_Chandelier ~0 ~0 ~0:@,CommandBlock:RUINSTRIGGER /testruin TP_ForestPool ~0 ~0 ~0:@,CommandBlock:RUINSTRIGGER /testruin TP_Underground_Fountain ~0 ~0 ~0:@
+
+layer
+1
+endlayer
+
+layer
+2
+endlayer
+
+

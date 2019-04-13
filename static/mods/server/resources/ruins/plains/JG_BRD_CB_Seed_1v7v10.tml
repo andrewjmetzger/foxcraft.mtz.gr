@@ -1,0 +1,34 @@
+# Bedrock Dungeon Seed -- MC 1.7.10 -- 29 Jan 2016
+# Created by Ruins mod version 15.1 Ingame Parser
+# authoring Player: Jordan_Greywolf
+# Note: Place this in biomes folder
+
+biomesToSpawnIn=beach,desert,plains,savanna,sunflower plains
+
+uniqueMinDistance=2000
+
+weight=1
+embed_into_distance=0
+acceptable_target_blocks=
+
+unacceptable_target_blocks=flowing_water,water,flowing_lava,lava,slime_congealed,slime_dirt,slime_grass
+
+dimensions=2,1,1
+allowable_overhang=0
+max_leveling=1
+leveling_buffer=-1
+preserve_water=0
+preserve_lava=0
+preserve_plants=1
+
+rule1=0,100,CommandBlock:RUINSTRIGGER /testruin TP_BRD_Hub ~15 9 ~0:@
+rule2=0,100,CommandBlock:RUINSTRIGGER /testruin TP_BRD_Tower ~15 64 ~0:@
+
+layer
+1
+endlayer
+
+layer
+2
+endlayer
+

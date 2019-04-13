@@ -1,0 +1,52 @@
+# Sunken Dungeon (structure spawner)
+# MC 1.7.10; 25 Nov 2014
+# Created by Ruins mod version 14.4 Ingame Parser
+# authoring Player: Jordan_Greywolf
+# Special Instructions: Put in appropriate biome folder
+# (e.g., deep ocean).
+#   TP_Sunken_Dungeon* templates should go in \templateparser folder.
+
+# Last Updated: 1 Nov 2015
+
+biomesToSpawnIn=deep ocean,oceanic abyss,coral reef,kelp forest,ocean oil field
+
+uniqueMinDistance=2000
+
+
+weight=1
+embed_into_distance=0
+acceptable_target_blocks=
+
+unacceptable_target_blocks=lava,flowing_lava,Natura:Cloud,cloud,slime_congealed,slime_dirt,slime_grass
+
+dimensions=5,1,1
+allowable_overhang=9999
+max_leveling=0
+leveling_buffer=-1
+preserve_water=1
+preserve_lava=0
+preserve_plants=1
+
+rule1=0,100,CommandBlock:RUINSTRIGGER /testruin TP_SunkenDungeon_Entry ~0 ~0 ~0:@
+rule2=0,100,minecraft:water
+
+layer
+1
+endlayer
+
+layer
+2
+endlayer
+
+layer
+2
+endlayer
+
+layer
+2
+endlayer
+
+layer
+2
+endlayer
+

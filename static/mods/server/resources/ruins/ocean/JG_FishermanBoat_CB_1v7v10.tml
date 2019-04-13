@@ -1,0 +1,28 @@
+# Fisherman Boat
+# MC 1.7.10; 26 Nov 2014
+# Created by Ruins mod version 14.4 Ingame Parser
+# authoring Player: Jordan_Greywolf
+# Last Updated 22 Jan 2016
+
+biomesToSpawnIn=ocean,deep ocean,oceanic abyss,coral reef,kelp forest,forested island,beach,gravel beach,stone beach,mushroomislandshore,rwg_oceantemperate,rwg_oceanwet
+
+uniqueMinDistance=2500
+
+weight=1
+embed_into_distance=2
+acceptable_target_blocks=water
+unacceptable_target_blocks=
+dimensions=1,1,1
+allowable_overhang=9999
+max_leveling=0
+leveling_buffer=0
+preserve_water=0
+preserve_lava=0
+
+rule1=0,100,CommandBlock:RUINSTRIGGER /summon Villager ~0 ~2 ~0 {Profession:4,CustomName:Fisherman,Offers:{Recipes:[{maxUses:8,buy:{id:346,Count:1},sell:{id:349,Count:1}},{maxUses:8,buy:{id:388,Count:1},sell:{id:349,Count:2}},{maxUses:8,buy:{id:287,Count:20},sell:{id:349,Count:1}},{maxUses:8,buy:{id:282,Count:1},sell:{id:349,Count:4}},{maxUses:8,buy:{id:360,Count:4},sell:{id:349,Count:1}},{maxUses:8,buy:{id:366,Count:1},sell:{id:349,Count:1}},{maxUses:8,buy:{id:364,Count:1},sell:{id:349,Count:1}},{maxUses:8,buy:{id:333,Count:1},sell:{id:349,Count:1}}]},Riding:{id:"Boat"},PersistenceRequired:1}:@
+
+# -------------------------------------------
+
+layer
+1
+endlayer

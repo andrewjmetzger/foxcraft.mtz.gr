@@ -1,0 +1,59 @@
+# Sandstone Dungeon Item - Pool
+# Created by Ruins mod version 14.6 Ingame Parser
+# authoring Player: Jordan_Greywolf
+# MC 1.7.10; 3 Jan 2015
+
+weight=1
+embed_into_distance=2
+acceptable_target_blocks=
+unacceptable_target_blocks=
+dimensions=4,5,5
+allowable_overhang=0
+max_leveling=0
+leveling_buffer=0
+preserve_water=0
+preserve_lava=0
+
+rule1=0,100,minecraft:sandstone-1
+rule2=0,100,minecraft:sandstone-2
+rule3=0,100,minecraft:sandstone_stairs-0
+rule4=0,100,minecraft:sandstone_stairs-2
+rule5=0,100,minecraft:water-0
+rule6=0,100,minecraft:sandstone_stairs-3
+rule7=0,100,CommandBlock:RUINSTRIGGER /setblock ~0 ~-1 ~0 mob_spawner 0 replace {EntityId:Skeleton,SpawnData:{Equipment:[{Count:1,id:286},{id:305},{id:304},{Count:1,id:315},{Count:1,id:314}],CustomName:Tomb Guardian,Attributes:[{Name:generic.movementSpeed,Base:0.5},{Name:generic.attackDamage,Base:3},{Name:generic.knockbackResistance,Base:1}],DropChances:[0.1F,0.0F,0.0F,0.1F,0.1F],Silent:1}}:@
+rule8=0,100,minecraft:sandstone_stairs-1
+rule9=0,100,minecraft:waterlily-0
+
+layer
+1,1,1,1,1
+1,1,1,1,1
+1,1,1,1,1
+1,1,1,1,1
+1,1,1,1,1
+endlayer
+
+layer
+2,3,3,3,2
+6,5,5,5,4
+6,5,7,5,4
+6,5,5,5,4
+2,8,8,8,2
+endlayer
+
+layer
+0,0,0,0,0
+0,0,9,0,0
+0,0,0,9,0
+0,9,0,9,0
+0,0,0,0,0
+endlayer
+
+layer
+0,0,0,0,0
+0,0,0,0,0
+0,0,0,0,0
+0,0,0,0,0
+0,0,0,0,0
+endlayer
+
+

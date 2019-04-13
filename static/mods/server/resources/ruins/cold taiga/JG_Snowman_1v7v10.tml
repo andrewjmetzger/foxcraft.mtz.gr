@@ -1,0 +1,38 @@
+
+# Snowman
+# 12 Mar 2014; MC 1.7.10, updated 15 Dec 2014
+# Created by Ruins mod version 12.3 Ingame Parser
+# authoring Player: Jordan_Greywolf
+# Last Updated: 29 Oct 2015
+
+biomesToSpawnIn=alps,arctic,cold beach,cold taiga,cold taiga hills,cold taiga m,frozenocean,frozen ocean,frozenriver,frozen river,glacier,ice mountains,ice plains,ice plains spikes,ice wasteland,icy hills,polar,polar chasm,snowy forest,snow forest,snow plains,snowy coniferous forest,snowy dead forest,twilight glacier,winter wonderland
+weight=1
+embed_into_distance=0
+
+unacceptable_target_blocks=lava,flowing_lava,water,flowing_water,cloud,Natura:Cloud,slime_congealed,slime_dirt,slime_grass
+
+dimensions=3,1,1
+allowable_overhang=0
+max_cut_in=0
+cut_in_buffer=0
+max_leveling=3
+leveling_buffer=-1
+preserve_water=0
+preserve_lava=0
+preserve_plants=1
+
+rule1=0,100,minecraft:snow-0
+rule2=0,100,minecraft:pumpkin
+
+layer
+1
+endlayer
+
+layer
+1
+endlayer
+
+layer
+2
+endlayer
+
