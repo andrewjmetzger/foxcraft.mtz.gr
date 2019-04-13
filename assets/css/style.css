@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body {
-	background-color: #111;
-	color: #fff;
+	background-color: #111111;
+	color: #ffffff;
 	font-family: 'Open Sans';
 }
 
 a {
-	color: #0074D9;
+	color: #ff0000;
 	text-decoration: none;
-  transition: color 0.5s;
+	transition: color 0.5s;
 }
 
 #content {
@@ -26,16 +27,27 @@ header {
 	width: 100%;
 	top: 0;
 	left: 0;
-	background-color: #111;
+	background-color: #111111;
 	z-index: 100;
 	box-sizing: border-box;
 	padding: 0 10px;
 }
-#site-title, #main-nav {display: inline-block;}
-#site-title {font-size: 1.5em; font-weight: bold; color: #fff}
+
+#site-title,
+#main-nav {
+	display: inline-block;
+}
+
+#site-title {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #ffffff
+}
 
 /* Navbar */
-#main-nav {float: right}
+#main-nav {
+	float: right
+}
 
 #toggle-menu {
 	width: 24px;
@@ -52,7 +64,7 @@ header {
 
 footer {
 	border-top: 1px solid;
-  padding: 10px;
+	padding: 10px;
 	text-align: center;
 	font-size: 0.9em;
 	margin-top: 20px;
@@ -62,46 +74,60 @@ footer {
 	text-align: center;
 }
 
-#social_links > a {
+#social_links>a {
 	font-size: 1.5em;
 }
 
-img {max-width: 100%; height: auto}
+img {
+	max-width: 100%;
+	height: auto
+}
 
 /* Video iframe */
 
 div.video {
 	position: relative;
 	width: 100%;
-	padding-bottom:56.25%;
+	padding-bottom: 56.25%;
 }
 
-div.video > iframe {
+div.video>iframe {
 	position: absolute;
 	width: 100%;
-  height: 100%;
+	height: 100%;
 	top: 0;
 	left: 0;
 }
 
-table {width: 100%}
-table th {text-align: left}
+table {
+	width: 100%
+}
 
-a:hover {color: #7FDBFF !important;}
+table th {
+	text-align: left
+}
+
+a:hover {
+	color: #ff8080 !important;
+}
 
 pre {
-	 white-space: pre-wrap;
+	white-space: pre-wrap;
 }
 
 /* Entries list */
 
-.entry {margin-bottom: 20px}
+.entry {
+	margin-bottom: 20px
+}
+
 .entry .entry-title {
 	font-size: 1.8em;
 	display: block;
 }
+
 .entry .entry-date {
-	color: #aaa;
+	color: #aaaaaa;
 	display: block;
 	margin: 5px 0;
 }
@@ -113,30 +139,36 @@ pre {
 	font-size: 1.2em;
 }
 
-#pagination a, #pagination span {
+#pagination a,
+#pagination span {
 	width: 24px;
 	display: inline-block;
 	height: 24px;
 	line-height: 24px;
 }
 
-#pagination .actual-page {font-weight: bold;}
-#pagination .inactive {color: #aaa}
+#pagination .actual-page {
+	font-weight: bold;
+}
 
-@media (max-width: 768px){
+#pagination .inactive {
+	color: #aaaaaa
+}
+
+@media (max-width: 768px) {
 	header {
 		line-height: 1px;
 		height: 44px;
 		line-height: 34px;
 	}
-	
+
 	#main-nav {
 		position: fixed;
 		float: none;
 		display: block;
 		left: -180px;
 		top: 0;
-		background-color: #111;
+		background-color: #111111;
 		line-height: initial;
 		width: 180px;
 		height: 100%;
@@ -146,52 +178,69 @@ pre {
 		z-index: 100;
 		transition: left 1s;
 	}
-	
-	#main-nav > a {
+
+	#main-nav>a {
 		display: block;
 		margin-bottom: 5px;
 	}
+
 	#toggle-menu {
 		display: inline-block;
 	}
-	
+
 	#toggle-menu::before {
 		font-family: 'Fontello';
 		content: '\F0C9';
-		color: #fff;
+		color: #ffffff;
 		font-size: 18px;
 	}
-	
-	#site-title {margin-left: 5px;}
-	
-	#main-nav.open {left: 0;}
-	#toggle-menu.open {z-index: 200}
-	#toggle-menu.open::before {content: '\E800'}
-	
+
+	#site-title {
+		margin-left: 5px;
+	}
+
+	#main-nav.open {
+		left: 0;
+	}
+
+	#toggle-menu.open {
+		z-index: 200
+	}
+
+	#toggle-menu.open::before {
+		content: '\E800'
+	}
+
 	/* tables */
-	table tbody, table thead, table tr,
-	table th, table td {display: block}
+	table tbody,
+	table thead,
+	table tr,
+	table th,
+	table td {
+		display: block
+	}
+
 	table thead {
 		position: absolute;
 		top: -9999px;
 	}
-	
+
 	table tr {
 		border-bottom: 1px solid;
 		padding: 10px 0
 	}
-	
+
 	table td {
 		position: relative;
 		padding-left: 45%;
 	}
-	
+
 	tbody td:before {
 		content: attr(data-title);
 		position: absolute;
 		left: 0;
 		display: block;
-    font-weight: bold;
+		font-weight: bold;
 		width: 40%;
 		white-space: nowrap;
 	}
