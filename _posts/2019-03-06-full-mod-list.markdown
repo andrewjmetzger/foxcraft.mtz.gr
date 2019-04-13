@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Full Mod List"
-date:   2019-04-02
+date:   2019-04-12
 permalink: /about/mod-list
 ---
 
@@ -58,6 +58,7 @@ Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfo
 * [OpenModsLib](https://minecraft.curseforge.com/projects/OpenModsLib)
 * [OreSpawn](http://www.orespawn.com/)
 * [RandomThings](https://minecraft.curseforge.com/projects/random-things)
+* [Ruins](http://atomicstryker.net/ruins.php), with [additional structures by Greywolf](http://greywolf.critter.net/minecraft.htm)
 * [Tinker's Construct](https://minecraft.curseforge.com/projects/tinkers-construct)
 * [Thaumcraft](https://minecraft.curseforge.com/projects/thaumcraft)
 * [Thermal Expansion](https://minecraft.curseforge.com/projects/ThermalExpansion)
