@@ -45,7 +45,7 @@ else {
 Push-Location "$PWD\static\resourcepacks\FoxcraftCustom"
 
 # Update pack.mcmeta
-$filePath = "$PWD\pack.mcmeta"
+$filePath = "pack.mcmeta"
 $file = (Get-Content "$filePath")
 if ($file -Match "v\d+\.\d+\.\d+") {
     $file -Replace "v\d+\.\d+\.\d+", "$nextTag" | Set-Content -Path "$filePath"
