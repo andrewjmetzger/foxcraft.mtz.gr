@@ -52,6 +52,7 @@ Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfo
 * [Modular Powersuits](https://minecraft.curseforge.com/projects/modular-powersuits)
 * [More Furnaces](https://minecraft.curseforge.com/projects/More-Furnaces)
 * [Morph](https://minecraft.curseforge.com/projects/Morph)
+* [MrCrayfish's Furniture Mod](https://www.curseforge.com/minecraft/mc-mods/mrcrayfish-furniture-mod/)
 * [NotEnoughItems (NEI)](https://minecraft.curseforge.com/projects/NotEnoughItems) (*client-side only*)
 * [Numina](https://minecraft.curseforge.com/projects/numina)
 * [OpenBlocks](https://minecraft.curseforge.com/projects/OpenBlocks)
