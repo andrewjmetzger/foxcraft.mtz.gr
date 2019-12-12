@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Full Mod List"
-date:   2019-04-12
+date:   2019-12-12
 permalink: /about/mod-list
 ---
 
@@ -40,7 +40,6 @@ Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfo
 * [Forge Essentials](https://minecraft.curseforge.com/projects/forge-essentials-74735) (*server-side only*)
 * [Galacticraft Core](https://micdoodle8.com/mods/galacticraft/downloads)
 * [Galacticraft Planets](https://micdoodle8.com/mods/galacticraft/downloads)
-* [Godzilla Mod](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1289451-wip-1-7-10-godzilla-mod-now-apart-of-the-legend)
 * [Hats](https://minecraft.curseforge.com/projects/hats)
 * [iChunUtil](https://minecraft.curseforge.com/projects/ichunutil)
 * [MalisisCore](https://minecraft.curseforge.com/projects/malisiscore)
