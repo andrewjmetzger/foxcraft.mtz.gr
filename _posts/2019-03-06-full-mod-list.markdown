@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Full Mod List"
-date:   2019-12-12
+date:   2020-01-03
 permalink: /about/mod-list
 ---
 
@@ -13,6 +13,7 @@ Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfo
 
 * [Ars Magica 2](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1292222-ars-magica-2-version-1-4-0-009-updated-february-8)
 * [AnimationAPI](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/1289836-animationapi-animate-your-entities-v1-2-3)
+* [AppleCore](https://github.com/squeek502/AppleCore)
 * [Applied Energistics 2](https://ae-mod.info/)
 * [Aroma1997Core](https://minecraft.curseforge.com/projects/aroma1997core)
 * [Baubles](https://minecraft.curseforge.com/projects/baubles)
@@ -64,4 +65,5 @@ Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfo
 * [Thermal Expansion](https://minecraft.curseforge.com/projects/ThermalExpansion)
 * [Thermal Foundation](https://minecraft.curseforge.com/projects/thermal-foundation)
 * [Twilight Forest](https://minecraft.curseforge.com/projects/the-twilight-forest)
+* [Waila](https://www.curseforge.com/minecraft/mc-mods/waila)
 * [Xaero's Minimap](https://minecraft.curseforge.com/projects/xaeros-minimap) (*client-side only*)
