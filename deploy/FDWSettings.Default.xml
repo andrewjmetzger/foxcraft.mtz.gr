@@ -7,5 +7,6 @@
         <FTPPort>21</FTPPort>
         <FTPUsername></FTPUsername>
         <FTPPassword></FTPPassword>
+        <FTPHome>.</FTPHome>
     </ServerSettings>
 </Settings>

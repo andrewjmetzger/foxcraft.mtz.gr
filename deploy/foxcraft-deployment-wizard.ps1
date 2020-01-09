@@ -178,7 +178,7 @@ if ( $Config.EnableFTP ) {
 
             # Download files
             Write-Output "[INFO] Downloading 'server.properties'"
-            $session.GetFiles("/server.properties", "$PWD\*").Check()
+            $session.GetFiles("$Config.FTPHome/server.properties", "$PWD\*").Check()
         }
         finally {
             $session.Dispose()
