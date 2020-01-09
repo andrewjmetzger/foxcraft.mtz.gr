@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Full Mod List"
-date:   2020-01-03
+date:   2020-01-09
 permalink: /about/mod-list
 ---
 
@@ -59,6 +59,7 @@ Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfo
 * [OpenModsLib](https://minecraft.curseforge.com/projects/OpenModsLib)
 * [OreSpawn](http://www.orespawn.com/)
 * [RandomThings](https://minecraft.curseforge.com/projects/random-things)
+* [Redstone Paste](https://www.curseforge.com/minecraft/mc-mods/redstone-paste/)
 * [Ruins](http://atomicstryker.net/ruins.php), with [additional structures by Greywolf](http://greywolf.critter.net/minecraft.htm)
 * [Tinker's Construct](https://minecraft.curseforge.com/projects/tinkers-construct)
 * [Thaumcraft](https://minecraft.curseforge.com/projects/thaumcraft)
