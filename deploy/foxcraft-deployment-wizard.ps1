@@ -18,6 +18,7 @@ if ( Test-Path -Path "$PWD\deploy\FDWSettings.xml" ) {
         FTPPort     = $ConfigFile.Settings.ServerSettings.FTPPort
         FTPUsername = $ConfigFile.Settings.ServerSettings.FTPUsername
         FTPPassword = $ConfigFile.Settings.ServerSettings.FTPPassword
+        FTPHome     = $ConfigFile.Settings.ServerSettings.FTPHome 
     }
     Write-Output "[INFO] Script is configured. Thanks for reading the docs!"
 }
