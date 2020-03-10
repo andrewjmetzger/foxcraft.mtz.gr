@@ -124,15 +124,15 @@ if ( $Config.EnableFTP ) {
         function FileTransferred {
             param($e)
  
-            if ($e.Error -eq $Null) {
+            if ($Null -eq $e.Error) {
                 Write-Host "Upload of $($e.FileName) succeeded"
             }
             else {
                 Write-Host "Upload of $($e.FileName) failed: $($e.Error)"
             }
  
-            if ($e.Chmod -ne $Null) {
-                if ($e.Chmod.Error -eq $Null) {
+            if ($Null -ne $e.Chmod) {
+                if ($Null -eq $e.Chmod.Error) {
                     Write-Host "Permissions of $($e.Chmod.FileName) set to $($e.Chmod.FilePermissions)"
                 }
                 else {
@@ -144,8 +144,8 @@ if ( $Config.EnableFTP ) {
                 Write-Host "Permissions of $($e.Destination) kept with their defaults"
             }
  
-            if ($e.Touch -ne $Null) {
-                if ($e.Touch.Error -eq $Null) {
+            if ($Null -ne $e.Touch) {
+                if ($Null -eq $e.Touch.Error) {
                     Write-Host "Timestamp of $($e.Touch.FileName) set to $($e.Touch.LastWriteTime)"
                 }
                 else {
