@@ -23,8 +23,8 @@ if ( Test-Path -Path "$PWD\deploy\FDWSettings.xml" ) {
     Write-Output "[INFO] Script is configured. Thanks for reading the docs!"
 }
 else {
-    Write-Output "[ERR] Settings file not found. Create a settings file first!";
-    Write-Output "Learn how to use the FDW here: https://github.com/andrewjmetzger/foxcraft.mtz.gr/wiki/Foxcraft-Deployment-Wizard:-Automatic-Deployment-with-PowerShell";
+    Write-Warning "[WARN] Settings file not found. Create a settings file first!";
+    Write-Warning "[WARN] Learn how to use this script here: https://github.com/andrewjmetzger/foxcraft.mtz.gr/wiki/Foxcraft-Deployment-Wizard:-Automatic-Deployment-with-PowerShell";
 }
 
 
@@ -56,9 +56,9 @@ else {
     Write-Error "[ERR] Could not modify '$filePath'."
 }
 
-if ( Test-Path "$PWD\FoxcraftCustom.zip" ) {
+if ( Test-Path "$PWD\FoxcraftCustom*.zip" ) {
     Write-Information "[INFO] Found existing ZIP, will remove."
-    Remove-Item "$PWD\FoxcraftCustom.zip" 
+    Remove-Item "$PWD\FoxcraftCustom*.zip" 
 }
 
 
@@ -66,7 +66,7 @@ Pop-Location
 
 
 Write-Output "[INFO] Compressing resource pack to ZIP, please wait..."
-Start-Process $PWD/deploy/7za.exe -ArgumentList "a -tzip $PWD/static/resourcepacks/FoxcraftCustom/FoxcraftCustom.zip $PWD/static/resourcepacks/FoxcraftCustom/*" -NoNewWindow -Wait
+Start-Process $PWD/deploy/7za.exe -ArgumentList "a -tzip $PWD/static/resourcepacks/FoxcraftCustom/FoxcraftCustom-$nextTag.zip $PWD/static/resourcepacks/FoxcraftCustom/*" -NoNewWindow -Wait
 Write-Output "[INFO] Finished compressing resource pack."
 
 
