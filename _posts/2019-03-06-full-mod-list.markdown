@@ -41,7 +41,6 @@ Because Foxcraft is so expansive, we couldn't make the entire mod list fit comfo
 * [Forge Essentials](https://minecraft.curseforge.com/projects/forge-essentials-74735) (*server-side only*)
 * [Galacticraft Core](https://micdoodle8.com/mods/galacticraft/downloads)
 * [Galacticraft Planets](https://micdoodle8.com/mods/galacticraft/downloads)
-* [GalaxySpace](https://github.com/BlesseNtumble/GalaxySpace)
 * [Hats](https://minecraft.curseforge.com/projects/hats)
 * [iChunUtil](https://minecraft.curseforge.com/projects/ichunutil)
 * [MalisisCore](https://minecraft.curseforge.com/projects/malisiscore)
