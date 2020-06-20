@@ -17,7 +17,7 @@ permalink: /
 ## Quick Start
 
 1. [Download Forge 10.13.4.1566](http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html) (Click "Show all versions" first)
-2. [Download the Mods](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/andrewjmetzger/foxcraft.mtz.gr/tree/{{ site.modpackVersion }}/static/mods/client&fileName=mods&rootDirectory=false)
+2. [Download the Mods](https://downgit.github.io/#/home?url=https://github.com/andrewjmetzger/foxcraft.mtz.gr/tree/{{ site.modpackVersion }}/static/mods/client&fileName=mods&rootDirectory=false)
 3. Add **Foxcraft** to your Minecraft server list:
    1. Use the server address **`play.foxcraft.mtz.gr`**.
    2. Make sure to set **Server Resource Packs: Enabled** to get the full experience.
