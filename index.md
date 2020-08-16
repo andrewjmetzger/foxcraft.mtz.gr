@@ -40,7 +40,7 @@ Foxcraft uses mods to enhance gameplay and provide an immersive experience. Here
 
 ## Foxcraft's Custom Resource Pack
 
-To ensure the most immersive experience, Foxcraft bundles custom textures for many of the blocks in the game. For players with Server Resource Packs enabled, the custom look should be used automatically. Players with Server Resource Packs disabled should [download the resource pack manually](https://raw.githubusercontent.com/andrewjmetzger/foxcraft.mtz.gr/{{ site.modpackVersion }}/static/resourcepacks/FoxcraftCustom/FoxcraftCustom.zip), and apply it before playing.
+To ensure the most immersive experience, Foxcraft bundles custom textures for many of the blocks in the game. For players with Server Resource Packs enabled, the custom look should be used automatically. Players with Server Resource Packs disabled should [download the resource pack manually](https://raw.githubusercontent.com/andrewjmetzger/foxcraft.mtz.gr/{{ site.modpackVersion }}/static/resourcepacks/FoxcraftCustom/FoxcraftCustom-{{ site.modpackVersion }}.zip)
 
 ### Legalese
 
